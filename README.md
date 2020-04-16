@@ -1,1 +1,1 @@
-# realtime-app
+# realtime-chat-app
