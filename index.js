@@ -5,11 +5,18 @@ const io = require('socket.io')(http);
 
 app.use(express.static(`public`));
 
+const users = {};
+
 io.on('connection', socket => {
   console.log('user connected');
 
+  socket.on('new-user', name => {
+    users[socket.id] = name;
+    socket.broadcast.emit('user-connected', name);
+  });
+
   socket.on('send-chat-message', message => {
-    socket.broadcast.emit('chat-message', message);
+    socket.broadcast.emit('chat-message', { message, userName: users[socket.id] });
   });
 
   socket.on('disconnect', () => {
