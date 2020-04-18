@@ -8,8 +8,6 @@ app.use(express.static(`public`));
 const users = {};
 
 io.on('connection', socket => {
-  console.log('user connected');
-
   socket.on('new-user', name => {
     users[socket.id] = name;
     socket.broadcast.emit('user-connected', name);

@@ -1,3 +1,135 @@
-.message-input {
-    border-radius: 25px;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
+*:focus { outline:0; }
+
+li { list-style-type: none; }
+
+/* Base styles */
+body {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: #090909;
+    color: #fff;
+}
+
+.messages-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    overflow-y: scroll;
+}
+
+.send-panel {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    padding-bottom: 15px;
+    bottom: 0;
+    width: 95%;
+}
+
+.send-panel__input {
+    width: 95%;
+    border-radius: 25px;
+    padding: 1em;
+    font-size: 16px;
+}
+
+.send-panel__button {
+    width: 15%;
+    padding: 0.5em;
+    background: none;
+    border: solid 2px #fff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.message {
+    margin-bottom: 5px;
+    padding: 1em;
+    max-width: 10em;
+    border-radius: 15px;
+}
+
+.message--online-status {
+    padding: 1em;
+    background: #32CD32	;
+    width: 100%;
+    opacity: 0;
+    transition: all 1s ease;
+    margin-bottom: 1em;
+}
+
+.message--self {
+    background-color: #3370A5;
+    align-self: flex-end;
+}
+
+.message--contact {
+    background-color: #233444;
+    align-self: flex-start;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/* Small tablet styles */
+@media screen and (min-width: 620px) {
+    .send-panel {
+        padding-bottom: 30px;
+        font-size: 14px;
+        width: 85%;
+    }
+
+    .send-panel__input {
+        width: 90%;
+        padding: 0.5em 1em;
+        width: 85%;
+    }
+
+    .send-panel__button {
+        width: 9%;
+        font-size: 14px;
+        padding: 0.5em;
+    }
+
+    .message {
+        max-width: 20em;
+    }
+
+    .messages-wrapper {
+        width: 80%;
+        padding: 1em 1em 0 1em;
+    }
+}
+
+/* Large tablets & laptop styles */
+@media screen and (min-width: 960px) {
+
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1200px) {
+    .send-panel {
+        width: 55%;
+    }
+
+    .messages-wrapper {
+        width: 42%;
+    }
+}
+

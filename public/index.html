@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <ul id="messages"></ul>
-    <form action="" id="myForm">
-        <input id="input" class="message-input" autocomplete="off" />
-        <button>Send</button>
+    <ul id="messages" class="messages-wrapper"></ul>
+    <form action="" id="myForm" class="send-panel">
+        <input id="input" class="send-panel__input" autocomplete="off" />
+        <button class="send-panel__button" id="send">Send</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script src="scripts/app.js"></script>
