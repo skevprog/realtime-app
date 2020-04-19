@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <title>Chat</title>
 </head>
@@ -11,7 +12,7 @@
 <body>
     <ul id="messages" class="messages-wrapper"></ul>
     <form action="" id="myForm" class="send-panel">
-        <input id="input" class="send-panel__input" autocomplete="off" />
+        <input id="input" class="send-panel__input" autocomplete="off" placeholder="Text Message" />
         <button class="send-panel__button" id="send">Send</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>

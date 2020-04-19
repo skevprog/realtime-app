@@ -12,15 +12,8 @@ const appendMessage = (message, classStyle) => {
   messagesList.scrollTop = messagesList.scrollHeight; // push the scroll to see the last messages
 };
 
-const fade = (element, fadeType) => {
-  if (fadeType === 'fadeIn') {
-    element.classList.add('fade-in');
-  }
-  if (fadeType === 'fadeOut') {
-    element.classList.remove('fade-in');
-    element.classList.add('fade-out');
-  }
-};
+const fadeIn = element => element.classList.add('fade-in');
+const fadeOut = element => element.classList.add('fade-out');
 
 const name = prompt('What is your name?');
 
@@ -32,17 +25,17 @@ joinedMessage.classList.add('message--online-status');
 let onlineMessage = document.getElementById('online');
 
 setTimeout(() => {
-  fade(onlineMessage, 'fadeIn');
+  fadeIn(onlineMessage);
 }, 500);
 
 socket.emit('new-user', name);
 
-socket.on('chat-message', ({ message, userName }) => {
-  appendMessage(`${userName} says: ${message}`, 'message--contact');
+socket.on('chat-message', ({ message }) => {
+  appendMessage(`${message}`, 'message--contact');
 });
 
 socket.on('user-connected', userName => {
-  appendMessage(`${userName} connected!`);
+  appendMessage(`${userName} connected!`, 'message--contact-conected');
 });
 
 myForm.addEventListener('submit', e => {
@@ -52,12 +45,12 @@ myForm.addEventListener('submit', e => {
   onlineMessage = document.getElementById('online');
   if (onlineMessage) {
     setTimeout(() => {
-      fade(joinedMessage, 'fadeOut');
+      fadeOut(joinedMessage);
       setTimeout(() => {
         onlineMessage.remove();
       }, 500);
     }, 500);
   }
-  appendMessage(`You: ${message}`, 'message--self');
+  appendMessage(`${message}`, 'message--self');
   input.value = '';
 });
