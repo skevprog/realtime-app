@@ -26,6 +26,7 @@ body {
     flex-direction: column;
     height: 85vh;
     overflow-y: scroll;
+    padding-top: 1em;
 }
 
 .send-panel {
@@ -38,7 +39,7 @@ body {
 }
 
 .send-panel__input {
-    width: 95%;
+    width: 80%;
     border-radius: 25px;
     padding: 1em;
     font-size: 16px;
@@ -50,7 +51,7 @@ body {
     background: none;
     border: solid 2px #fff;
     color: #fff;
-    font-size: 16px;
+    font-size: 1em;
     border-radius: 10px;
 }
 
@@ -58,7 +59,7 @@ body {
     margin-bottom: 5px;
     padding: 1em;
     max-width: 12em;
-    border-radius: 15px;
+    border-radius: 1em;
 }
 
 .message--online-status {
@@ -72,8 +73,10 @@ body {
 
 .message--contact-conected {
     background: none;
-    border: solid 1px #fff;
+    border: none;
     padding: 0.5em;
+    max-width: 100%;
+    text-align: center;
 }
 
 .message--self {

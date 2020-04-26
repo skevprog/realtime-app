@@ -15,7 +15,7 @@ const appendMessage = (message, classStyle) => {
 const fadeIn = element => element.classList.add('fade-in');
 const fadeOut = element => element.classList.add('fade-out');
 
-const name = prompt('What is your name?');
+const name = prompt('What is your name?') || 'Uknown';
 
 const joinedMessage = document.createElement('li');
 joinedMessage.id = 'online';
